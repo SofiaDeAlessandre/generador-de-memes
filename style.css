@@ -29,7 +29,7 @@ section {
 main{
   text-align: center;
 }
-div {
+#descargar-img {
   background-color: white;
   width: 600px;
   height: 600px;
@@ -67,13 +67,42 @@ div p {
   right: 0;
   margin-right: 350px;
 }
+.div-aside-imagen{
+  background-color: white;
+  width: 250px;
+  height: 70px;
+  padding-top: 10px;
+  text-align: left;
+}
+.div-fondo{
+  display: flex;
+  justify-content: space-between;
+}
+#seleccion-color{
+  width: 100px;
+  height: 40px;
+  background-color:rgb(225, 178, 178);
+  border-radius: 3px;
+}
+#efecto-fondo{
+  width: 100px;
+  height: 40px;
+  background-color: rgb(225, 178, 178);
+  border-radius: 3px;
+}
+.filtros h4{
+  text-align: left;
+}
+.div-filtros{
+  display: flex;
+  flex-direction: column;
+}
 .oculto {
 display: none;
-background-color: aquamarine;
 }
-.visible {
+/*.visible {
   display: flex;
-}
+}*/
 #btn-descargar{
 background-color: green;
 padding: 10px;
@@ -129,4 +158,8 @@ label{
 input{
   width: 60%;
   height: 30px;
+}
+.checkbox{
+  display: flex;
+  justify-content:space-around;
 }

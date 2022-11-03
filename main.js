@@ -7,8 +7,9 @@ let textoCambiar = document.getElementById("texto-cambiar");
 let TextoInferior = document.getElementById("texto-inferior");
 let textoInferiorCambiar = document.getElementById("texto-inferior-cambiar");
 let btnImagen = document.getElementById("btn-imagen");
-let asideImagen  = document.getElementsByClassName("aside-imagen");
-let asideTexto = document.getElementsByClassName("aside-texto");
+let btnTexto = document.getElementById("btn-texto");
+let asideImagen  = document.querySelector(".aside-imagen");
+let asideTexto = document.querySelector(".aside-texto");
 
 //-------funciones-------:
 
@@ -34,9 +35,15 @@ TextoInferior.addEventListener("input", (event) => {
 
 //ocultar aside
 btnImagen.addEventListener("click", () => {
-    asideImagen.classList.add("visible");
+asideImagen.classList.remove("oculto");
+asideTexto.classList.add("oculto");
     }
     );
-
+    
+btnTexto.addEventListener("click", () =>{
+  asideImagen.classList.add("oculto");
+  asideTexto.classList.remove("oculto");
+}
+)
 
 

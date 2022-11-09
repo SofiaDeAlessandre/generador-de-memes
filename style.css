@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -26,7 +26,7 @@ section {
   justify-content: center;
   position: relative;
 }
-main{
+main {
   text-align: center;
 }
 #descargar-img {
@@ -40,14 +40,16 @@ main{
   justify-content: center;
   align-items: center;
 }
-img {
+#img-cambiar {
   width: 100%;
   height: 400px;
   background-color: black;
+  background-size: cover;
 }
 div p {
   font-size: 40px;
 }
+/*aside texto*/
 .aside-texto {
   background-color: rgb(198, 207, 207);
   width: 300px;
@@ -57,6 +59,80 @@ div p {
   top: 0;
   right: 0;
 }
+.checkbox {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  gap: 1px;
+  font-size: 15px;
+}
+.checkbox input {
+  width: 15px;
+  height: 15px;
+}
+.fuente {
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  height: 120px;
+  margin-top: 8px;
+  gap: 5px;
+}
+.fuente select {
+  width: 240px;
+  height: 80px;
+}
+.alinear-texto {
+  display: flex;
+}
+.alinear-texto input {
+  margin-top: 9px;
+  width: 120px;
+}
+.div-alinear-texto button {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(238, 210, 210);
+}
+.div-color-fondo {
+  display: flex;
+  width: 240px;
+  justify-content: space-around;
+  padding: 10px;
+}
+#input-color-texto {
+  width: 90px;
+  background-color: white;
+}
+#input-fondo-texto {
+  width: 90px;
+}
+.contorno {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 10px;
+}
+.btn-contorno {
+  display: flex;
+}
+.btn-contorno button {
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+}
+.espaciado-interlineado {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  text-align: left;
+}
+#interlineado {
+  width: 185px;
+  height: 30px;
+}
+/*ASIDE IMAGEN*/
 .aside-imagen {
   background-color: rgb(3, 31, 31);
   width: 300px;
@@ -65,101 +141,97 @@ div p {
   position: absolute;
   top: 0;
   right: 0;
-  margin-right: 350px;
+  /*margin-right: 350px;*/
 }
-.div-aside-imagen{
-  background-color: white;
+.div-aside-imagen {
   width: 250px;
   height: 70px;
   padding-top: 10px;
   text-align: left;
 }
-.div-fondo{
+.div-de-fondo {
   display: flex;
   justify-content: space-between;
 }
-#seleccion-color{
+#seleccion-color {
   width: 100px;
-  height: 40px;
-  background-color:rgb(225, 178, 178);
+  height: 30px;
   border-radius: 3px;
 }
-#efecto-fondo{
+#tipo-fondo {
   width: 100px;
-  height: 40px;
-  background-color: rgb(225, 178, 178);
-  border-radius: 3px;
+  height: 30;
 }
-.filtros h4{
+.filtros h4 {
   text-align: left;
 }
-.div-filtros{
+.div-filtros {
   display: flex;
   flex-direction: column;
 }
 .oculto {
-display: none;
+  display: none;
 }
 /*.visible {
   display: flex;
 }*/
-#btn-descargar{
-background-color: green;
-padding: 10px;
-cursor: pointer;
+#btn-descargar {
+  background-color: green;
+  padding: 10px;
+  cursor: pointer;
 }
-.modo-claro{
+/*Modo claro y oscuro*/
+.modo-claro {
   background-color: rgb(222, 217, 217);
   color: black;
 }
-.modo-claro header{
+.modo-claro header {
   background-color: rgb(163, 159, 159);
 }
-.modo-claro h1{
+.modo-claro h1 {
   color: black;
 }
-.modo-claro button{
-  background-color:rgb(163, 159, 159);
+.modo-claro button {
+  background-color: rgb(163, 159, 159);
 }
-.modo-claro aside{
+.modo-claro aside {
   background-color: white;
 }
 
-.modo-oscuro{
+.modo-oscuro {
   background-color: rgb(133, 132, 132);
 }
-.modo-oscuro header{
+.modo-oscuro header {
   background-color: rgb(53, 50, 50);
 }
-.modo-oscuro button{
+.modo-oscuro button {
   background-color: rgb(53, 50, 50);
   color: white;
 }
-.modo-oscuro aside{
-  background-color:rgb(79, 75, 75) ;
+.modo-oscuro aside {
+  background-color: rgb(79, 75, 75);
   color: white;
 }
-.primer-div-aside{
+.primer-div-aside {
   background-color: aqua;
 }
-.segundo-div-aside{
+.segundo-div-aside {
   background-color: blue;
 }
-form{
+form {
   display: flex;
   flex-direction: column;
   gap: 10px;
- 
 }
-label{
+label {
   text-align: left;
   padding-top: 10px;
 }
-input{
+input {
   width: 60%;
   height: 30px;
 }
-.checkbox{
+.checkbox {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
 }

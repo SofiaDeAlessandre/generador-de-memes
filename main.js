@@ -18,6 +18,13 @@ let contImagen = $("#descargar-img");
 let inputColorImagen = $("#input-color-imagen");
 let inputBrillo = $("#brillo");
 let inputOpacidad = $("#opacidad");
+let inputContraste = $("#contraste");
+let inputDesenfoque = $("#desenfoque");
+let inputEscalaGrises = $("#escala-de-grises");
+let inputSepia = $("#sepia");
+let inputHue = $("#hue");
+let inputSaturado = $('#saturado');
+let inputNegativo = $('#negativo');
 let btnDescargar = $("#btn-descargar");
 let asideTexto = $(".aside-texto");
 let btnRestablecer = $("#btn-restablecer");
@@ -95,8 +102,20 @@ imagenCambiar.style.backgroundColor= event.target.value;
    );
    
    //boton restablecer EVENTO
+   const restablecerFiltros = () => {
+    inputBrillo.value = 0;
+    inputOpacidad.value = 0; 
+    inputContraste.value = 0;
+    inputDesenfoque.value = 0;
+    inputEscalaGrises.value = 0;
+    inputSepia.value = 0;
+    inputHue.value = 0;
+    inputSaturado.value = 0; 
+    inputNegativo.value = 0;
+   }
+btnRestablecer.addEventListener("click", restablecerFiltros);
 
-
+//filtros
 
    inputBrillo.addEventListener("change", (event) => {
 imagenCambiar.style.filter = `brightness(${event.target.value})`;
@@ -105,3 +124,24 @@ imagenCambiar.style.filter = `brightness(${event.target.value})`;
    inputOpacidad.addEventListener("change", (event) => {
     imagenCambiar.style.opacity = `${event.target.value}%`;
    })
+inputContraste.addEventListener("change", (event) => {
+  imagenCambiar.style.filter = `contrast(${event.target.value})`;
+})
+inputDesenfoque.addEventListener("change", (event) => {
+  imagenCambiar.style.filter = `blur(${event.target.value}px)`;
+})
+inputEscalaGrises.addEventListener("change", (event) => {
+  imagenCambiar.style.filter = `grayscale(${event.target.value}%)`;
+})
+inputSepia.addEventListener("change", (event) => {
+  imagenCambiar.style.filter = `sepia(${event.target.value}%)`;
+})
+inputHue.addEventListener("change", (event) => {
+  imagenCambiar.style.filter = `hue-rotate(${event.target.value}deg)`;
+})
+inputSaturado.addEventListener("change", (event) => {
+  imagenCambiar.style.filter = `saturate(${event.target.value}%)`;
+})
+inputNegativo.addEventListener("change", (event) => {
+  imagenCambiar.style.filter = `invert(${event.target.value})`;
+})

@@ -1,4 +1,4 @@
-const $ = (selector) => document.querySelector (selector);
+const $ = (selector) => document.querySelector(selector);
 
 //-------variables-------:
 let body = document.body;
@@ -12,7 +12,7 @@ let btnImagen = $("#btn-imagen");
 let urlInput = $("#url-img");
 let imagenCambiar = $("#img-cambiar");
 let btnTexto = $("#btn-texto");
-let asideImagen  = $(".aside-imagen");
+let asideImagen = $(".aside-imagen");
 let contImagen = $("#descargar-img");
 //let imagenPrincipal = $("#imagen-principal");
 let inputColorImagen = $("#input-color-imagen");
@@ -23,8 +23,8 @@ let inputDesenfoque = $("#desenfoque");
 let inputEscalaGrises = $("#escala-de-grises");
 let inputSepia = $("#sepia");
 let inputHue = $("#hue");
-let inputSaturado = $('#saturado');
-let inputNegativo = $('#negativo');
+let inputSaturado = $("#saturado");
+let inputNegativo = $("#negativo");
 let btnDescargar = $("#btn-descargar");
 let asideTexto = $(".aside-texto");
 let btnRestablecer = $("#btn-restablecer");
@@ -43,7 +43,6 @@ let imagenCambiar = document.getElementById("img-cambiar");
 let btnTexto = document.getElementById("btn-texto");
 let asideImagen  = document.querySelector(".aside-imagen");
 let asideTexto = document.querySelector(".aside-texto");*/
-
 
 //-------funciones-------:
 
@@ -69,79 +68,89 @@ TextoInferior.addEventListener("input", (event) => {
 
 //ocultar aside
 btnImagen.addEventListener("click", () => {
-asideImagen.classList.remove("oculto");
-asideTexto.classList.add("oculto");
-    }
-    );
-    
-btnTexto.addEventListener("click", () =>{
+  asideImagen.classList.remove("oculto");
+  asideTexto.classList.add("oculto");
+});
+
+btnTexto.addEventListener("click", () => {
   asideImagen.classList.add("oculto");
   asideTexto.classList.remove("oculto");
-}
-)
+});
 
 //vincular url
 urlInput.addEventListener("input", (event) => {
   imagenCambiar.style.backgroundImage = `url("${event.target.value}")`;
-}
-)
+});
 //descargar imagen
 const descargarMeme = () => {
-domtoimage.toBlob(contImagen).then(function (blob) {
-        saveAs(blob, "mi-meme.png");
-    });
-  }
+  domtoimage.toBlob(contImagen).then(function (blob) {
+    saveAs(blob, "mi-meme.png");
+  });
+};
 
-  btnDescargar.addEventListener("click", descargarMeme)
+btnDescargar.addEventListener("click", descargarMeme);
 
-  //cambio de color
+//cambio de color
 
-  inputColorImagen.addEventListener("blur", (event) => {
-imagenCambiar.style.backgroundColor= event.target.value;
-  }
-   );
-   
-   //boton restablecer EVENTO
-   const restablecerFiltros = () => {
-    inputBrillo.value = 0;
-    inputOpacidad.value = 0; 
-    inputContraste.value = 0;
-    inputDesenfoque.value = 0;
-    inputEscalaGrises.value = 0;
-    inputSepia.value = 0;
-    inputHue.value = 0;
-    inputSaturado.value = 0; 
-    inputNegativo.value = 0;
-   }
-btnRestablecer.addEventListener("click", restablecerFiltros);
+inputColorImagen.addEventListener("blur", (event) => {
+  imagenCambiar.style.backgroundColor = event.target.value;
+});
+
+//boton restablecer EVENTO
+/*const restablecerFiltros = () => {
+  inputBrillo.value = 1;
+  inputOpacidad.value = 100;
+  inputContraste.value = 1;
+  inputDesenfoque.value = 0;
+  inputEscalaGrises.value = 0;
+  inputSepia.value = 0;
+  inputHue.value = 0;
+  inputSaturado.value = 0;
+  inputNegativo.value = 0;
+};
+btnRestablecer.addEventListener("click", restablecerFiltros);*/
 
 //filtros
 
-   inputBrillo.addEventListener("change", (event) => {
-imagenCambiar.style.filter = `brightness(${event.target.value})`;
-   }
-   )
-   inputOpacidad.addEventListener("change", (event) => {
-    imagenCambiar.style.opacity = `${event.target.value}%`;
-   })
+const aplicarFiltros = () => {
+  imagenCambiar.style.filter = `brightness(${inputBrillo.value}) opacity(${inputOpacidad.value}%) contrast(${inputContraste.value}) blur(${inputDesenfoque.value}px) grayscale(${inputEscalaGrises.value}%) sepia(${inputSepia.value}%) hue-rotate(${inputHue.value}deg) saturate(${inputSaturado.value}%) invert(${inputNegativo.value})`;
+};
+
+/*
+inputBrillo.addEventListener("change", (event) => {
+  imagenCambiar.style.filter = `brightness(${event.target.value})`;
+});
+inputOpacidad.addEventListener("change", (event) => {
+  imagenCambiar.style.opacity = `${event.target.value}%`;
+});
 inputContraste.addEventListener("change", (event) => {
   imagenCambiar.style.filter = `contrast(${event.target.value})`;
-})
+});
 inputDesenfoque.addEventListener("change", (event) => {
   imagenCambiar.style.filter = `blur(${event.target.value}px)`;
-})
+});
 inputEscalaGrises.addEventListener("change", (event) => {
   imagenCambiar.style.filter = `grayscale(${event.target.value}%)`;
-})
+});
 inputSepia.addEventListener("change", (event) => {
   imagenCambiar.style.filter = `sepia(${event.target.value}%)`;
-})
+});
 inputHue.addEventListener("change", (event) => {
   imagenCambiar.style.filter = `hue-rotate(${event.target.value}deg)`;
-})
+});
 inputSaturado.addEventListener("change", (event) => {
   imagenCambiar.style.filter = `saturate(${event.target.value}%)`;
-})
+});
 inputNegativo.addEventListener("change", (event) => {
   imagenCambiar.style.filter = `invert(${event.target.value})`;
-})
+});*/
+
+inputBrillo.addEventListener("change", aplicarFiltros);
+inputOpacidad.addEventListener("change", aplicarFiltros);
+inputContraste.addEventListener("change", aplicarFiltros);
+inputDesenfoque.addEventListener("change", aplicarFiltros);
+inputEscalaGrises.addEventListener("change", aplicarFiltros);
+inputSepia.addEventListener("change", aplicarFiltros);
+inputHue.addEventListener("change", aplicarFiltros);
+inputSaturado.addEventListener("change",aplicarFiltros);
+inputNegativo.addEventListener("change", aplicarFiltros);

@@ -16,6 +16,7 @@ let asideImagen = $(".aside-imagen");
 let contImagen = $("#descargar-img");
 //let imagenPrincipal = $("#imagen-principal");
 let inputColorImagen = $("#input-color-imagen");
+let tipoFondo = $("#tipo-fondo");
 let inputBrillo = $("#brillo");
 let inputOpacidad = $("#opacidad");
 let inputContraste = $("#contraste");
@@ -28,6 +29,19 @@ let inputNegativo = $("#negativo");
 let btnDescargar = $("#btn-descargar");
 let asideTexto = $(".aside-texto");
 let btnRestablecer = $("#btn-restablecer");
+let sinTextoSup = $("#checkbox-sin-texto");
+let sinTextoIn = $("#checkbox-sin-texto-in");
+let seleccionFuentes = $("#seleccion-fuentes");
+let tamañoFuente = $("#tamaño-fuente");
+let btnIzquierda = $("#btn-izquierda");
+let btnCentro = $("#btn-centro");
+let btnDerecha = $("#btn-derecha");
+let inputColorTexto = $("#input-color-texto");
+let inputFondoTexto = $("#input-fondo-texto");
+let inputFondoTransparente = $("#fondo-transparente");
+let inputEspaciado = $("#espaciado");
+let inputInterlineado = $("#interlineado");
+
 
 /* /-------variables-------:
 let body = document.body;
@@ -97,7 +111,7 @@ inputColorImagen.addEventListener("blur", (event) => {
 });
 
 //boton restablecer EVENTO
-/*const restablecerFiltros = () => {
+const restablecerFiltros = () => {
   inputBrillo.value = 1;
   inputOpacidad.value = 100;
   inputContraste.value = 1;
@@ -107,8 +121,9 @@ inputColorImagen.addEventListener("blur", (event) => {
   inputHue.value = 0;
   inputSaturado.value = 0;
   inputNegativo.value = 0;
+  aplicarFiltros()
 };
-btnRestablecer.addEventListener("click", restablecerFiltros);*/
+btnRestablecer.addEventListener("click", restablecerFiltros);
 
 //filtros
 
@@ -154,3 +169,93 @@ inputSepia.addEventListener("change", aplicarFiltros);
 inputHue.addEventListener("change", aplicarFiltros);
 inputSaturado.addEventListener("change",aplicarFiltros);
 inputNegativo.addEventListener("change", aplicarFiltros);
+
+
+inputColorImagen.addEventListener ("input", (event) => {
+  imagenCambiar.style.color = event.target.value;
+})
+//tipo de fondo 
+tipoFondo.addEventListener("input", (event) => {
+  let ninguno = $("#ninguno");
+  let aclarar = $("#aclarar");
+  let oscurecer = $("#oscurecer");
+  let diferencia = $("#diferencia");
+  let luminosidad = $("#luminosidad");
+  let multiplicar = $("#multiplicar");
+if (event.target.value === 'aclarar'){
+  imagenCambiar.style.backgroundBlendMode = "lighten";
+} else if (event.target.value === "oscurecer"){
+  imagenCambiar.style.backgroundBlendMode = "darken";
+} else if (event.target.value === "diferencia"){
+  imagenCambiar.style.backgroundBlendMode = "difference";
+} else if (event.target.value === "luminosidad"){
+  imagenCambiar.style.backgroundBlendMode = "luminosity";
+} else if (event.target.value === "multiplicar"){
+  imagenCambiar.style.backgroundBlendMode ="multiply";
+} else {
+  imagenCambiar.style.backgroundBlendMode = "normal";
+}
+}
+)
+//aside TEXTO
+
+sinTextoSup.addEventListener("input", (event) => {
+  textoCambiar.classList.toggle("texto-oculto");
+})
+sinTextoIn.addEventListener("input", (event)  => {
+  textoInferiorCambiar.classList.toggle("texto-oculto");
+})
+// fuentes
+seleccionFuentes.addEventListener("input", (event)=>{
+  
+  if (event.target.value === "arial"){
+    textoCambiar.style.fontFamily= "Arial";
+  } else if (event.target.value === "Arial Black"){
+    textoCambiar.style.fontFamily = "Arial Black";
+  } else if (event.target.value === "Cambria"){
+    textoCambiar.style.fontFamily = "serif";
+  } else if (event.target.value === "Andale Mono"){
+    textoCambiar.style.fontFamily = "Andale Mono";
+  }
+}
+)
+//tamaño fuente
+
+tamañoFuente.addEventListener ("input", (event)=> {
+  textoCambiar.style.fontSize = `${event.target.value}px`;
+})
+
+//alineación
+btnIzquierda.addEventListener ("click", (event) =>{
+  contImagen.style.alignItems = "flex-start";
+})
+btnCentro.addEventListener ("click", (event) => {
+  contImagen.style.alignItems = "center";
+})
+btnDerecha.addEventListener ("click", (event) => {
+  contImagen.style.alignItems = "flex-end";
+})
+//color TXT
+inputColorTexto.addEventListener ("input", (event) => {
+  contImagen.style.color = event.target.value;
+})
+//fondo TXT
+inputFondoTexto.addEventListener ("input", (event) => {
+  contImagen.style.backgroundColor = event.target.value;
+})
+//fondo transparente
+
+inputFondoTransparente.addEventListener("input", (event) => {
+  contImagen.classList.toggle("fondo-transparente")
+})
+
+//espaciado
+inputEspaciado.addEventListener("input", (evento) =>{
+  textoCambiar.style.padding = `${evento.target.value}px`;
+  textoInferiorCambiar.style.padding = `${evento.target.value}px`;
+})
+
+inputInterlineado.addEventListener("input", (evento) =>{
+  textoCambiar.style.lineHeight = evento.target.value;
+  textoInferiorCambiar.style.lineHeight = evento.target.value;
+})

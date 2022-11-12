@@ -23,7 +23,7 @@
     <!--SECTION-->
     <section>
       <main>
-        <div id="descargar-img">
+        <div id="descargar-img" class="descargar-img">
           <p id="texto-cambiar">Top text</p>
           <div id="img-cambiar">
           </div>
@@ -41,8 +41,15 @@
         <div class="div-aside-imagen">
           <h4>Fondo</h4>
           <div class="div-de-fondo">
-            <input type="color" id="input-color-imagen" />
-            <select id="tipo-fondo"></select>
+            <input type="color" id="input-color-imagen" value="#FFFFFF"/>
+            <select id="tipo-fondo">
+              <option value="ninguno" id="ninguno">Ninguno</option>
+              <option value="aclarar" id="aclarar" selected>Aclarar</option>
+              <option value="oscurecer" id="oscurecer">Oscurecer</option>
+              <option value="diferencia" id="diferencia">Diferencia</option>
+              <option value="luminosidad" id="luminosidad">luminosidad</option>
+              <option value="multiplicar" id="multiplicar">Multiplicar</option>
+            </select>
           </div>
         </div>
         <div class="filtros">
@@ -93,21 +100,24 @@
           <label for="texto-superior"> SUPERIOR </label>
           <input type="text" id="texto-superior" />
           <div class="checkbox">
-            <input type="checkbox" />Sin texto superior
+            <input type="checkbox" id="checkbox-sin-texto"/>Sin texto superior
           </div>
           <label for="texto-inferior"> INFERIOR </label>
           <input type="text" id="texto-inferior" />
           <div class="checkbox">
-            <input type="checkbox" />Sin texto inferior
+            <input type="checkbox" id="checkbox-sin-texto-in"/>Sin texto inferior
           </div>
         </form>
         <div class="fuente">
           <h3>FUENTE</h3>
-          <select name="seleccion-fuentes">
-            <option value="arial">Arial</option>
+          <select name="seleccion-fuentes" id="seleccion-fuentes">
+            <option value="Arial">Arial</option>
+            <option value="Arial Black">Arial Black</option>
+            <option value="Cambria">Cambria</option>
+            <option value="Andale Mono">Andale Mono</option>
           </select>
           <div class="alinear-texto">
-            <input type="text" id="tamaño-fuente" />
+            <input type="number" id="tamaño-fuente" min="10" max="100" />
             <div class="div-alinear-texto">
               <button id="btn-izquierda"></button>
               <button id="btn-centro"></button>
@@ -139,7 +149,7 @@
             </div>
           </div>
         </div>
-        <div class="checkbox"><input type="checkbox" />Fondo transparente</div>
+        <div class="checkbox"><input type="checkbox" id="fondo-transparente"/>Fondo transparente</div>
         <div class="contorno">
           <h4>CONTORNO</h4>
           <div class="btn-contorno">
@@ -152,12 +162,20 @@
           <div class="espaciado">
             <h4>ESPACIADO</h4>
             <br />
-            <input type="number" id="espaciado" />
+            <input type="number" id="espaciado" value="40" max="100" />
           </div>
           <div class="interlineado">
             <h4>INTERLINEADO</h4>
             <br />
-            <select type="number" id="interlineado"></select>
+            <select type="number" id="interlineado">
+              <option value="0.8">0.8</option>
+            <option value="1">1</option>
+            <option value="1.2">1.2</option>
+            <option value="1.4">1.4</option>
+            <option value="1.6">1.6</option>
+            <option value="1.8">1.8</option>
+            <option value="2">2</option>
+            </select>
           </div>
         </div>
       </aside>

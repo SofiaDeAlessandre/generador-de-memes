@@ -4,7 +4,6 @@ const $ = (selector) => document.querySelector(selector);
 let body = document.body;
 let btn = $("#btn");
 let textoSuperior = $("#texto-superior");
-/*let pTextoSuperior = document.getElementsByClassName("p-texto-superior"); no se usa por ahora*/
 let textoCambiar = $("#texto-cambiar");
 let TextoInferior = $("#texto-inferior");
 let textoInferiorCambiar = $("#texto-inferior-cambiar");
@@ -14,7 +13,6 @@ let imagenCambiar = $("#img-cambiar");
 let btnTexto = $("#btn-texto");
 let asideImagen = $(".aside-imagen");
 let contImagen = $("#descargar-img");
-//let imagenPrincipal = $("#imagen-principal");
 let inputColorImagen = $("#input-color-imagen");
 let tipoFondo = $("#tipo-fondo");
 let inputBrillo = $("#brillo");
@@ -41,26 +39,13 @@ let inputFondoTexto = $("#input-fondo-texto");
 let inputFondoTransparente = $("#fondo-transparente");
 let inputEspaciado = $("#espaciado");
 let inputInterlineado = $("#interlineado");
-
-
-/* /-------variables-------:
-let body = document.body;
-let btn = document.getElementById("btn");
-let textoSuperior = document.getElementById("texto-superior");
-/*let pTextoSuperior = document.getElementsByClassName("p-texto-superior"); no se usa por ahora
-let textoCambiar = document.getElementById("texto-cambiar");
-let TextoInferior = document.getElementById("texto-inferior");
-let textoInferiorCambiar = document.getElementById("texto-inferior-cambiar");
-let btnImagen = document.getElementById("btn-imagen");
-let urlInput = document.getElementById("url-img");
-let imagenCambiar = document.getElementById("img-cambiar");
-let btnTexto = document.getElementById("btn-texto");
-let asideImagen  = document.querySelector(".aside-imagen");
-let asideTexto = document.querySelector(".aside-texto");*/
+let btnClaro = $("#contorno-claro");
+let btnNinguno = $("#contorno-ninguno");
+let btnOscuro = $("#contorno-oscuro");
 
 //-------funciones-------:
 
-//btn modo claro - modo oscuro
+//modos
 btn.addEventListener("click", () => {
   body.classList.toggle("modo-claro");
   body.classList.toggle("modo-oscuro");
@@ -71,15 +56,6 @@ btn.addEventListener("click", () => {
     btn.innerText = " 💡 Modo claro";
   }
 });
-
-//cambiar texto superior - inferior
-textoSuperior.addEventListener("input", (event) => {
-  textoCambiar.innerText = event.target.value;
-});
-TextoInferior.addEventListener("input", (event) => {
-  textoInferiorCambiar.innerText = event.target.value;
-});
-
 //ocultar aside
 btnImagen.addEventListener("click", () => {
   asideImagen.classList.remove("oculto");
@@ -90,27 +66,13 @@ btnTexto.addEventListener("click", () => {
   asideImagen.classList.add("oculto");
   asideTexto.classList.remove("oculto");
 });
-
-//vincular url
-urlInput.addEventListener("input", (event) => {
-  imagenCambiar.style.backgroundImage = `url("${event.target.value}")`;
-});
-//descargar imagen
+//descargar 
 const descargarMeme = () => {
   domtoimage.toBlob(contImagen).then(function (blob) {
     saveAs(blob, "mi-meme.png");
   });
 };
-
-btnDescargar.addEventListener("click", descargarMeme);
-
-//cambio de color
-
-inputColorImagen.addEventListener("blur", (event) => {
-  imagenCambiar.style.backgroundColor = event.target.value;
-});
-
-//boton restablecer EVENTO
+//restablecer
 const restablecerFiltros = () => {
   inputBrillo.value = 1;
   inputOpacidad.value = 100;
@@ -123,43 +85,34 @@ const restablecerFiltros = () => {
   inputNegativo.value = 0;
   aplicarFiltros()
 };
-btnRestablecer.addEventListener("click", restablecerFiltros);
-
 //filtros
-
 const aplicarFiltros = () => {
   imagenCambiar.style.filter = `brightness(${inputBrillo.value}) opacity(${inputOpacidad.value}%) contrast(${inputContraste.value}) blur(${inputDesenfoque.value}px) grayscale(${inputEscalaGrises.value}%) sepia(${inputSepia.value}%) hue-rotate(${inputHue.value}deg) saturate(${inputSaturado.value}%) invert(${inputNegativo.value})`;
 };
 
-/*
-inputBrillo.addEventListener("change", (event) => {
-  imagenCambiar.style.filter = `brightness(${event.target.value})`;
-});
-inputOpacidad.addEventListener("change", (event) => {
-  imagenCambiar.style.opacity = `${event.target.value}%`;
-});
-inputContraste.addEventListener("change", (event) => {
-  imagenCambiar.style.filter = `contrast(${event.target.value})`;
-});
-inputDesenfoque.addEventListener("change", (event) => {
-  imagenCambiar.style.filter = `blur(${event.target.value}px)`;
-});
-inputEscalaGrises.addEventListener("change", (event) => {
-  imagenCambiar.style.filter = `grayscale(${event.target.value}%)`;
-});
-inputSepia.addEventListener("change", (event) => {
-  imagenCambiar.style.filter = `sepia(${event.target.value}%)`;
-});
-inputHue.addEventListener("change", (event) => {
-  imagenCambiar.style.filter = `hue-rotate(${event.target.value}deg)`;
-});
-inputSaturado.addEventListener("change", (event) => {
-  imagenCambiar.style.filter = `saturate(${event.target.value}%)`;
-});
-inputNegativo.addEventListener("change", (event) => {
-  imagenCambiar.style.filter = `invert(${event.target.value})`;
-});*/
+//-------eventos-------:
 
+//cambiar textos
+textoSuperior.addEventListener("input", (event) => {
+  textoCambiar.innerText = event.target.value;
+});
+TextoInferior.addEventListener("input", (event) => {
+  textoInferiorCambiar.innerText = event.target.value;
+});
+//vincular url
+urlInput.addEventListener("input", (event) => {
+  imagenCambiar.style.backgroundImage = `url("${event.target.value}")`;
+});
+//cambiar color
+inputColorImagen.addEventListener("blur", (event) => {
+  imagenCambiar.style.backgroundColor = event.target.value;
+});
+//descargar
+btnDescargar.addEventListener("click", descargarMeme);
+//restablecer
+btnRestablecer.addEventListener("click", restablecerFiltros);
+
+//filtros
 inputBrillo.addEventListener("change", aplicarFiltros);
 inputOpacidad.addEventListener("change", aplicarFiltros);
 inputContraste.addEventListener("change", aplicarFiltros);
@@ -217,12 +170,21 @@ seleccionFuentes.addEventListener("input", (event)=>{
   } else if (event.target.value === "Andale Mono"){
     textoCambiar.style.fontFamily = "Andale Mono";
   }
+  if (event.target.value === "arial"){
+    textoInferiorCambiar.style.fontFamily= "Arial";
+  } else if (event.target.value === "Arial Black"){
+    textoInferiorCambiar.style.fontFamily = "Arial Black";
+  } else if (event.target.value === "Cambria"){
+    textoInferiorCambiar.style.fontFamily = "serif";
+  } else if (event.target.value === "Andale Mono"){
+    textoInferiorCambiar.style.fontFamily = "Andale Mono";
+  }
 }
 )
 //tamaño fuente
-
 tamañoFuente.addEventListener ("input", (event)=> {
   textoCambiar.style.fontSize = `${event.target.value}px`;
+  textoInferiorCambiar.style.fontSize = `${event.target.value}px`;
 })
 
 //alineación
@@ -244,17 +206,33 @@ inputFondoTexto.addEventListener ("input", (event) => {
   contImagen.style.backgroundColor = event.target.value;
 })
 //fondo transparente
-
 inputFondoTransparente.addEventListener("input", (event) => {
-  contImagen.classList.toggle("fondo-transparente")
+  contImagen.classList.toggle("fondo-transparente");
 })
+//contorno
 
+btnClaro.addEventListener("click", () => {
+ textoCambiar.classList.add("contorno-claro-efecto");
+ textoInferiorCambiar.classList.add("contorno-claro-efecto");
+ textoCambiar.classList.remove("contorno-oscuro-efecto");
+ textoInferiorCambiar.classList.remove("contorno-oscuro-efecto");
+})
+btnOscuro.addEventListener("click", () => {
+  textoCambiar.classList.add("contorno-oscuro-efecto");
+  textoInferiorCambiar.classList.add("contorno-oscuro-efecto");
+})
+btnNinguno.addEventListener("click", () => {
+textoCambiar.classList.remove("contorno-oscuro-efecto");
+textoCambiar.classList.remove("contorno-claro-efecto");
+textoInferiorCambiar.classList.remove("contorno-oscuro-efecto");
+textoInferiorCambiar.classList.remove("contorno-claro-efecto");
+})
 //espaciado
 inputEspaciado.addEventListener("input", (evento) =>{
   textoCambiar.style.padding = `${evento.target.value}px`;
   textoInferiorCambiar.style.padding = `${evento.target.value}px`;
 })
-
+//interlineado
 inputInterlineado.addEventListener("input", (evento) =>{
   textoCambiar.style.lineHeight = evento.target.value;
   textoInferiorCambiar.style.lineHeight = evento.target.value;

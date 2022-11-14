@@ -24,10 +24,10 @@
     <section>
       <main>
         <div id="descargar-img" class="descargar-img">
-          <p id="texto-cambiar">Top text</p>
+          <p id="texto-cambiar" class="texto-sup-cambiar">Top text</p>
           <div id="img-cambiar">
           </div>
-          <p id="texto-inferior-cambiar">Bottom text</p>
+          <p id="texto-inferior-cambiar" class="texto-inf-cambiar">Bottom text</p>
         </div>
         <button id="btn-descargar">Descargar meme</button>
       </main>
@@ -119,9 +119,9 @@
           <div class="alinear-texto">
             <input type="number" id="tamaño-fuente" min="10" max="100" />
             <div class="div-alinear-texto">
-              <button id="btn-izquierda"></button>
-              <button id="btn-centro"></button>
-              <button id="btn-derecha"></button>
+              <button class="btn-alinear"id="btn-izquierda">⬅</button>
+              <button class= "btn-alinear" id="btn-centro">↔</button>
+              <button class="btn-alinear"id="btn-derecha">➡</button>
             </div>
           </div>
         </div>
@@ -153,16 +153,16 @@
         <div class="contorno">
           <h4>CONTORNO</h4>
           <div class="btn-contorno">
-            <button>Ninguno</button>
-            <button>Claro</button>
-            <button>Oscuro</button>
+            <button id="contorno-ninguno">Ninguno</button>
+            <button id="contorno-claro" class="contorno-claro">Claro</button>
+            <button id="contorno-oscuro">Oscuro</button>
           </div>
         </div>
         <div class="espaciado-interlineado">
           <div class="espaciado">
             <h4>ESPACIADO</h4>
             <br />
-            <input type="number" id="espaciado" value="40" max="100" />
+            <input type="number" id="espaciado" value="54" max="100" />
           </div>
           <div class="interlineado">
             <h4>INTERLINEADO</h4>

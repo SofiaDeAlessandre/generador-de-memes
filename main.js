@@ -42,6 +42,8 @@ let inputInterlineado = $("#interlineado");
 let btnClaro = $("#contorno-claro");
 let btnNinguno = $("#contorno-ninguno");
 let btnOscuro = $("#contorno-oscuro");
+let cerrarImg = $("#cerrar-img");
+let cerrarTxt = $("#cerrar-txt");
 
 //-------funciones-------:
 
@@ -236,4 +238,11 @@ inputEspaciado.addEventListener("input", (evento) =>{
 inputInterlineado.addEventListener("input", (evento) =>{
   textoCambiar.style.lineHeight = evento.target.value;
   textoInferiorCambiar.style.lineHeight = evento.target.value;
+})
+//cerrar aside
+cerrarImg.addEventListener("click", () => {
+asideImagen.classList.add("oculto")
+})
+cerrarTxt.addEventListener("click", () => {
+  asideTexto.classList.add("oculto")
 })

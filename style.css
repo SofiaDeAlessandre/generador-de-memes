@@ -4,11 +4,6 @@
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-header {
-  background-color: black;
-  padding: 20px;
-  margin-bottom: 50px;
-}
 :root {
   --modoClaroSection: rgb(231, 214, 226);
   --modoClaroHeaderBtn: rgb(169, 151, 163);
@@ -17,6 +12,11 @@ header {
   --modoOscuroHeaderBtn: rgb(29, 29, 49);
   --modoOscuroAside: rgb(40, 40, 70);
   --inputColores: rgb(174, 174, 176);
+}
+header {
+  background-color: black;
+  padding: 20px;
+  margin-bottom: 50px;
 }
 nav {
   text-align: center;
@@ -338,15 +338,22 @@ select {
     padding-top: 0px;
     padding-left: 5px;
   }
-.fuente select {
-width: 50%;
-}
-#interlineado{
-  width: 50%;
-}
-input{
-  width: 50%;
-}
+  #btn-descargar{
+    padding: 5px;
+  }
+  #btn-restablecer{
+    padding: 0px;
+  }
+  .fuente select {
+    width: 50%;
+  }
+  #interlineado {
+    width: 50%;
+  }
+  input {
+    width: 50%;
+    height: 15px;
+  }
   span {
     display: flex;
     position: relative;

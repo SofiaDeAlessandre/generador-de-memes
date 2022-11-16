@@ -345,14 +345,14 @@ select {
     padding: 0px;
   }
   .fuente select {
-    width: 50%;
+    width: 60%;
   }
   #interlineado {
-    width: 50%;
+    width: 60%;
   }
   input {
-    width: 50%;
-    height: 15px;
+    width: 60%;
+    height: 20px;
   }
   span {
     display: flex;
@@ -365,6 +365,8 @@ select {
   }
   header {
     width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
   }
   .descargar-img {
     width: 380px;

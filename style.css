@@ -9,6 +9,15 @@ header {
   padding: 20px;
   margin-bottom: 50px;
 }
+:root {
+  --modoClaroSection:rgb(231, 214, 226);
+  --modoClaroHeaderBtn: rgb(169, 151, 163);
+  --modoClaroAside: rgb(208, 193, 203);
+  --modoOscuroSection: rgb(69, 69, 92);
+  --modoOscuroHeaderBtn:rgb(29, 29, 49) ;
+  --modoOscuroAside: rgb(40, 40, 70);
+  --inputColores:rgb(187, 187, 191);
+}
 nav {
   text-align: center;
   padding-top: 15px;
@@ -71,7 +80,7 @@ div p {
   top: 0;
   right: 0;
   padding-top: 60px;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 span{
   border-radius: 5px;
@@ -87,7 +96,6 @@ span{
   display: flex;
   width: 150px;
   font-size: 13px;
-  background-color: aqua;
 }
 .checkbox input {
   width: 15px;
@@ -109,8 +117,10 @@ span{
   gap: 5px;
 }
 .fuente select {
-  width: 240px;
+  width: 90%;
   height: 80px;
+  background-color: var(--inputColores);
+  border: 0px;
 }
 .alinear-texto {
   display: flex;
@@ -122,7 +132,7 @@ span{
 .div-alinear-texto button {
   width: 30px;
   height: 30px;
-  background-color: rgb(238, 210, 210);
+  background-color: var(--inputColores);
 }
 .div-color-fondo {
   display: flex;
@@ -132,7 +142,6 @@ span{
 }
 #input-color-texto {
   width: 90px;
-  background-color: white;
 }
 #input-fondo-texto {
   width: 90px;
@@ -142,9 +151,10 @@ span{
   flex-direction: column;
   text-align: left;
   padding-top: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .contorno-btn{
-  background-color: blueviolet;
   width: 50px;
 }
 .contorno-claro-efecto{
@@ -160,7 +170,6 @@ span{
 .btn-contorno {
   display: flex;
   width: 250px;
-  background-color: aquamarine;
 }
 .btn-contorno button {
   width: 80px;
@@ -177,8 +186,10 @@ span{
   text-align: left;
 }
 #interlineado {
-  width: 185px;
+  width: 90%;
   height: 30px;
+  background-color: var(--inputColores);
+  border: 0px;
 }
 /*ASIDE IMAGEN*/
 .aside-imagen {
@@ -189,13 +200,16 @@ span{
   top: 0;
   right: 0;
   padding-top: 60px;
-  padding-left: 10px;
+  padding-left: 20px;
 }
 .div-aside-imagen {
   width: 250px;
   height: 70px;
   padding-top: 10px;
   text-align: left;
+}
+#input-color-imagen{
+  width: 100px;
 }
 .div-de-fondo {
   display: flex;
@@ -220,7 +234,13 @@ span{
 .oculto {
   display: none;
 }
-
+#btn-restablecer{
+  padding: 5px;
+  border-radius: 2px;
+}
+.range-img{
+  width: 90%;
+}
 #btn-descargar {
   background-color: green;
   padding: 10px;
@@ -228,44 +248,39 @@ span{
 }
 /*Modo claro y oscuro*/
 .modo-claro {
-  background-color: rgb(222, 217, 217);
+  background-color:var(--modoClaroSection);
   color: black;
 }
 .modo-claro header {
-  background-color: rgb(163, 159, 159);
+  background-color: var(--modoClaroHeaderBtn);
 }
 .modo-claro h1 {
   color: black;
 }
 .modo-claro button {
-  background-color: rgb(163, 159, 159);
+  background-color:var(--modoClaroHeaderBtn);
 }
 .modo-claro aside {
-  background-color: white;
+  background-color:var(--modoClaroAside);
 }
 .texto-cambiar{
   text-shadow: none;
 }
 .modo-oscuro {
-  background-color: rgb(133, 132, 132);
+  background-color: var(--modoOscuroSection) ;
 }
 .modo-oscuro header {
-  background-color: rgb(53, 50, 50);
+  background-color: var(--modoOscuroHeaderBtn);
 }
 .modo-oscuro button {
-  background-color: rgb(53, 50, 50);
+  background-color: var(--modoOscuroHeaderBtn);
   color: white;
 }
 .modo-oscuro aside {
-  background-color: rgb(79, 75, 75);
+  background-color: var(--modoOscuroAside);
   color: white;
 }
-.primer-div-aside {
-  background-color: aqua;
-}
-.segundo-div-aside {
-  background-color: blue;
-}
+
 form {
   display: flex;
   flex-direction: column;
@@ -276,21 +291,49 @@ label {
   padding-top: 10px;
 }
 input {
-  width: 60%;
+  width: 90%;
   height: 30px;
-  background-color: aquamarine;
-  border-radius: 5px;
+  border-radius:5px;
+  border-width: 0px;
+  background-color:var(--inputColores);
 }
 select{
-  background-color: blueviolet;
   border-radius: 5px;
+  border-width: 0px;
+  background-color:var(--inputColores);
 }
 .checkbox {
   display: flex;
   justify-content: space-around;
 }
+
+@media screen and (max-width: 880px){
+  .aside-imagen {
+   width: 90%;
+   height: 100%;
+   padding: 0%;
+  }
+  .range-img{
+    width: 60%;
+  }
+  span{
+    display: flex;
+    position: relative;
+  }
+  .aside-texto {
+    width: 90%;
+    height: 100%;
+    padding-top: 0px;
+  }
+  header{
+   width: 880px;
+  }
+  .descargar-img {
+    width: 450px;
+    height: 500px;
+  }
+}
 @media screen and (max-width: 440px){
-  
   .aside-imagen {
    width: 100%;
    height: 100%;
@@ -312,5 +355,4 @@ select{
     width: 380px;
     height: 500px;
   }
-  
 }

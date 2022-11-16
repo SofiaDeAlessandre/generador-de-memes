@@ -68,7 +68,7 @@ btnTexto.addEventListener("click", () => {
   asideImagen.classList.add("oculto");
   asideTexto.classList.remove("oculto");
 });
-//descargar 
+//descargar
 const descargarMeme = () => {
   domtoimage.toBlob(contImagen).then(function (blob) {
     saveAs(blob, "mi-meme.png");
@@ -85,7 +85,7 @@ const restablecerFiltros = () => {
   inputHue.value = 0;
   inputSaturado.value = 0;
   inputNegativo.value = 0;
-  aplicarFiltros()
+  aplicarFiltros();
 };
 //filtros
 const aplicarFiltros = () => {
@@ -122,14 +122,13 @@ inputDesenfoque.addEventListener("change", aplicarFiltros);
 inputEscalaGrises.addEventListener("change", aplicarFiltros);
 inputSepia.addEventListener("change", aplicarFiltros);
 inputHue.addEventListener("change", aplicarFiltros);
-inputSaturado.addEventListener("change",aplicarFiltros);
+inputSaturado.addEventListener("change", aplicarFiltros);
 inputNegativo.addEventListener("change", aplicarFiltros);
 
-
-inputColorImagen.addEventListener ("input", (event) => {
+inputColorImagen.addEventListener("input", (event) => {
   imagenCambiar.style.color = event.target.value;
-})
-//tipo de fondo 
+});
+//tipo de fondo
 tipoFondo.addEventListener("input", (event) => {
   let ninguno = $("#ninguno");
   let aclarar = $("#aclarar");
@@ -137,112 +136,117 @@ tipoFondo.addEventListener("input", (event) => {
   let diferencia = $("#diferencia");
   let luminosidad = $("#luminosidad");
   let multiplicar = $("#multiplicar");
-if (event.target.value === 'aclarar'){
-  imagenCambiar.style.backgroundBlendMode = "lighten";
-} else if (event.target.value === "oscurecer"){
-  imagenCambiar.style.backgroundBlendMode = "darken";
-} else if (event.target.value === "diferencia"){
-  imagenCambiar.style.backgroundBlendMode = "difference";
-} else if (event.target.value === "luminosidad"){
-  imagenCambiar.style.backgroundBlendMode = "luminosity";
-} else if (event.target.value === "multiplicar"){
-  imagenCambiar.style.backgroundBlendMode ="multiply";
-} else {
-  imagenCambiar.style.backgroundBlendMode = "normal";
-}
-}
-)
+  if (event.target.value === "aclarar") {
+    imagenCambiar.style.backgroundBlendMode = "lighten";
+  } else if (event.target.value === "oscurecer") {
+    imagenCambiar.style.backgroundBlendMode = "darken";
+  } else if (event.target.value === "diferencia") {
+    imagenCambiar.style.backgroundBlendMode = "difference";
+  } else if (event.target.value === "luminosidad") {
+    imagenCambiar.style.backgroundBlendMode = "luminosity";
+  } else if (event.target.value === "multiplicar") {
+    imagenCambiar.style.backgroundBlendMode = "multiply";
+  } else {
+    imagenCambiar.style.backgroundBlendMode = "normal";
+  }
+});
 //aside TEXTO
 
 sinTextoSup.addEventListener("input", (event) => {
   textoCambiar.classList.toggle("texto-oculto");
-})
-sinTextoIn.addEventListener("input", (event)  => {
+});
+sinTextoIn.addEventListener("input", (event) => {
   textoInferiorCambiar.classList.toggle("texto-oculto");
-})
+});
 // fuentes
-seleccionFuentes.addEventListener("input", (event)=>{
-  
-  if (event.target.value === "arial"){
-    textoCambiar.style.fontFamily= "Arial";
-  } else if (event.target.value === "Arial Black"){
+seleccionFuentes.addEventListener("input", (event) => {
+  if (event.target.value === "arial") {
+    textoCambiar.style.fontFamily = "Arial";
+  } else if (event.target.value === "Arial Black") {
     textoCambiar.style.fontFamily = "Arial Black";
-  } else if (event.target.value === "Cambria"){
-    textoCambiar.style.fontFamily = "serif";
-  } else if (event.target.value === "Andale Mono"){
-    textoCambiar.style.fontFamily = "Andale Mono";
+  } else if (event.target.value === "Verdana") {
+    textoCambiar.style.fontFamily = "Verdana";
+  } else if (event.target.value === "Tahoma") {
+    textoCambiar.style.fontFamily = "Tahoma";
+  }else if (event.target.value === "Lucida Sans") {
+    textoCambiar.style.fontFamily = "Lucida Sans";
+  }else if (event.target.value === "Georgia") {
+    textoCambiar.style.fontFamily = "Georgia";
   }
-  if (event.target.value === "arial"){
-    textoInferiorCambiar.style.fontFamily= "Arial";
-  } else if (event.target.value === "Arial Black"){
+  if (event.target.value === "arial") {
+    textoInferiorCambiar.style.fontFamily = "Arial";
+  } else if (event.target.value === "Arial Black") {
     textoInferiorCambiar.style.fontFamily = "Arial Black";
-  } else if (event.target.value === "Cambria"){
-    textoInferiorCambiar.style.fontFamily = "serif";
-  } else if (event.target.value === "Andale Mono"){
-    textoInferiorCambiar.style.fontFamily = "Andale Mono";
+  } else if (event.target.value === "Verdana") {
+    textoInferiorCambiar.style.fontFamily = "Verdana";
+  } else if (event.target.value === "Tahoma") {
+    textoInferiorCambiar.style.fontFamily = "Tahoma";
+  }else if (event.target.value === "Lucida Sans") {
+    textoInferiorCambiar.style.fontFamily = "Lucida Sans";
+  }else if (event.target.value === "Georgia") {
+    textoInferiorCambiar.style.fontFamily = "Georgia";
   }
-}
-)
+});
 //tamaño fuente
-tamañoFuente.addEventListener ("input", (event)=> {
+tamañoFuente.addEventListener("input", (event) => {
   textoCambiar.style.fontSize = `${event.target.value}px`;
   textoInferiorCambiar.style.fontSize = `${event.target.value}px`;
-})
+});
 
 //alineación
-btnIzquierda.addEventListener ("click", (event) =>{
+btnIzquierda.addEventListener("click", (event) => {
   contImagen.style.alignItems = "flex-start";
-})
-btnCentro.addEventListener ("click", (event) => {
+});
+btnCentro.addEventListener("click", (event) => {
   contImagen.style.alignItems = "center";
-})
-btnDerecha.addEventListener ("click", (event) => {
+});
+btnDerecha.addEventListener("click", (event) => {
   contImagen.style.alignItems = "flex-end";
-})
+});
 //color TXT
-inputColorTexto.addEventListener ("input", (event) => {
+inputColorTexto.addEventListener("input", (event) => {
   contImagen.style.color = event.target.value;
-})
+});
 //fondo TXT
-inputFondoTexto.addEventListener ("input", (event) => {
+inputFondoTexto.addEventListener("input", (event) => {
   contImagen.style.backgroundColor = event.target.value;
-})
+});
 //fondo transparente
 inputFondoTransparente.addEventListener("input", (event) => {
   contImagen.classList.toggle("fondo-transparente");
-})
+});
 //contorno
 
 btnClaro.addEventListener("click", () => {
- textoCambiar.classList.add("contorno-claro-efecto");
- textoInferiorCambiar.classList.add("contorno-claro-efecto");
- textoCambiar.classList.remove("contorno-oscuro-efecto");
- textoInferiorCambiar.classList.remove("contorno-oscuro-efecto");
-})
+  textoCambiar.classList.add("contorno-claro-efecto");
+  textoInferiorCambiar.classList.add("contorno-claro-efecto");
+  textoCambiar.classList.remove("contorno-oscuro-efecto");
+  textoInferiorCambiar.classList.remove("contorno-oscuro-efecto");
+});
 btnOscuro.addEventListener("click", () => {
   textoCambiar.classList.add("contorno-oscuro-efecto");
   textoInferiorCambiar.classList.add("contorno-oscuro-efecto");
-})
+});
 btnNinguno.addEventListener("click", () => {
-textoCambiar.classList.remove("contorno-oscuro-efecto");
-textoCambiar.classList.remove("contorno-claro-efecto");
-textoInferiorCambiar.classList.remove("contorno-oscuro-efecto");
-textoInferiorCambiar.classList.remove("contorno-claro-efecto");
-})
+  textoCambiar.classList.remove("contorno-oscuro-efecto");
+  textoCambiar.classList.remove("contorno-claro-efecto");
+  textoInferiorCambiar.classList.remove("contorno-oscuro-efecto");
+  textoInferiorCambiar.classList.remove("contorno-claro-efecto");
+});
 //espaciado
-inputEspaciado.addEventListener("input", (evento) =>{
+inputEspaciado.addEventListener("input", (evento) => {
   textoCambiar.style.padding = `${evento.target.value}px`;
   textoInferiorCambiar.style.padding = `${evento.target.value}px`;
-})
+});
 //interlineado
-inputInterlineado.addEventListener("input", (evento) =>{
+inputInterlineado.addEventListener("input", (evento) => {
   textoCambiar.style.lineHeight = evento.target.value;
   textoInferiorCambiar.style.lineHeight = evento.target.value;
-})
+});
 //cerrar aside
 cerrarImg.addEventListener("click", () => {
-asideImagen.classList.add("oculto")
-})
+  asideImagen.classList.add("oculto");
+});
 cerrarTxt.addEventListener("click", () => {
-  asideTexto.classList.add("oculto")
-})
+  asideTexto.classList.add("oculto");
+});

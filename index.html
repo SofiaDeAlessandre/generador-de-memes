@@ -14,7 +14,7 @@
     <header>
       <h1>Generador de memes</h1>
       <nav>
-        <button id="btn-imagen">📷 Imagen</button>
+        <button id="btn-imagen">📷Imagen</button>
         <button id="btn-texto">🖋 Texto</button>
         <button id="btn">💡 Modo claro</button>
       </nav>
@@ -29,7 +29,7 @@
           </div>
           <p id="texto-inferior-cambiar" class="texto-inf-cambiar">Bottom text</p>
         </div>
-        <button id="btn-descargar">Descargar meme</button>
+        <button id="btn-descargar">⬇ Descargar meme</button>
       </main>
       <!--ASIDE IMAGEN-->
       <aside class="aside-imagen">
@@ -57,39 +57,39 @@
           <h4>Filtros</h4>
           <div class="div-filtros">
             <label for="brillo">Brillo</label>
-            <input type="range" id="brillo" value="1" min="0" max="1" step="0.1"/>
+            <input class="range-img" type="range" id="brillo" value="1" min="0" max="1" step="0.1"/>
           </div>
           <div class="div-filtros">
             <label for="opacidad">Opacidad</label>
-            <input type="range" id="opacidad" value="100" min="0" max="100" step="10"/>
+            <input class="range-img" type="range" id="opacidad" value="100" min="0" max="100" step="10"/>
           </div>
           <div class="div-filtros">
             <label for="contraste">Contraste</label>
-            <input type="range" id="contraste" value="1" min="0" max="1" step="0.1"/>
+            <input class="range-img" type="range" id="contraste" value="1" min="0" max="1" step="0.1"/>
           </div>
           <div class="div-filtros">
             <label for="desenfoque">Desenfoque</label>
-            <input type="range" id="desenfoque" value="0" min="0" max="10" step="0.1" />
+            <input class="range-img" type="range" id="desenfoque" value="0" min="0" max="10" step="0.1" />
           </div>
           <div class="div-filtros">
             <label for="escala-de-brillo">Escala de grises</label>
-            <input type="range" id="escala-de-grises" value="0" min="0" max="100" step="1"/>
+            <input class="range-img" type="range" id="escala-de-grises" value="0" min="0" max="100" step="1"/>
           </div>
           <div class="div-filtros">
             <label for="sepia">Sepia</label>
-            <input type="range" id="sepia" value="0" min="0" max="100" step="1"/>
+            <input class="range-img" type="range" id="sepia" value="0" min="0" max="100" step="1"/>
           </div>
           <div class="div-filtros">
             <label for="hue">Hue</label>
-            <input type="range" id="hue" value="0" min="0" max="359" step="1" />
+            <input class="range-img" type="range" id="hue" value="0" min="0" max="359" step="1" />
           </div>
           <div class="div-filtros">
             <label for="saturado">Saturado</label>
-            <input type="range" id="saturado" value="0" min="100" max="1000" step="10"/>
+            <input class="range-img" type="range" id="saturado" value="0" min="100" max="1000" step="10"/>
           </div>
           <div class="div-filtros">
             <label for="negativo">Negativo</label>
-            <input type="range" id="negativo" value="0" min="0" max="1" step="0.1" />
+            <input class="range-img "type="range" id="negativo" value="0" min="0" max="1" step="0.1" />
           </div>
           <button type="reset" id="btn-restablecer">Restablecer</button>
         </div>
@@ -99,12 +99,12 @@
         <span id="cerrar-txt">&times</span>
         <h2>TEXTO</h2>
         <form>
-          <label for="texto-superior"> SUPERIOR </label>
+          <label for="texto-superior"> <b>SUPERIOR</b> </label>
           <input type="text" id="texto-superior" />
           <div class="checkbox">
             <input type="checkbox" id="checkbox-sin-texto"/>Sin texto superior
           </div>
-          <label for="texto-inferior"> INFERIOR </label>
+          <label for="texto-inferior"> <b>INFERIOR</b> </label>
           <input type="text" id="texto-inferior" />
           <div class="checkbox">
             <input type="checkbox" id="checkbox-sin-texto-in"/>Sin texto inferior
@@ -115,11 +115,13 @@
           <select name="seleccion-fuentes" id="seleccion-fuentes">
             <option value="Arial">Arial</option>
             <option value="Arial Black">Arial Black</option>
-            <option value="Cambria">Cambria</option>
-            <option value="Andale Mono">Andale Mono</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Lucida Sans">Lucida Sans</option>
+            <option value="Georgia">Georgia</option>
           </select>
           <div class="alinear-texto">
-            <input type="number" id="tamaño-fuente" min="10" max="100" />
+            <input type="number" id="tamaño-fuente" min="10" max="100" value="30"/>
             <div class="div-alinear-texto">
               <button class="btn-alinear"id="btn-izquierda">⬅</button>
               <button class= "btn-alinear" id="btn-centro">↔</button>
@@ -153,7 +155,7 @@
         </div>
         <div class="checkbox"><input type="checkbox" id="fondo-transparente"/>Fondo transparente</div>
         <div class="contorno">
-          <h4>CONTORNO</h4>
+          <h5>CONTORNO</h5>
           <div class="btn-contorno">
             <button id="contorno-ninguno">Ninguno</button>
             <button id="contorno-claro" class="contorno-claro">Claro</button>
@@ -162,12 +164,12 @@
         </div>
         <div class="espaciado-interlineado">
           <div class="espaciado">
-            <h4>ESPACIADO</h4>
+            <h5>ESPACIADO</h5>
             <br />
             <input type="number" id="espaciado" value="54" max="100" />
           </div>
           <div class="interlineado">
-            <h4>INTERLINEADO</h4>
+            <h5>INTERLINEADO</h5>
             <br />
             <select type="number" id="interlineado">
               <option value="0.8">0.8</option>

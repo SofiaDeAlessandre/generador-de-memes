@@ -5,35 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+      integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>😃Generador de memes por Sofía</title>
   </head>
   <body class="modo-claro">
     <!--HEADER-->
     <header>
       <h1>Generador de memes</h1>
       <nav>
-        <button id="btn-imagen">📷Imagen</button>
-        <button id="btn-texto">🖋 Texto</button>
-        <button id="btn">💡 Modo claro</button>
+        <button id="btn-imagen" aria-label="botón para aside de imágen">📷Imagen</button>
+        <button id="btn-texto" aria-label="botón para aside texto">🖋 Texto</button>
+        <button id="btn" aria-label="botón para cambiar modo claro/oscuro">💡 Modo claro</button>
       </nav>
     </header>
     <!--FIN HEADER-->
     <!--SECTION-->
     <section>
       <main>
-        <div id="descargar-img" class="descargar-img">
-          <p id="texto-cambiar" class="texto-sup-cambiar">Top text</p>
-          <div id="img-cambiar">
-          </div>
-          <p id="texto-inferior-cambiar" class="texto-inf-cambiar">Bottom text</p>
+        <div id="descargar-img" class="descargar-img" aria-label="contenedor principal para editar la imágen">
+          <p id="texto-cambiar" class="texto-sup-cambiar" aria-label="edición de texto superior">Top text</p>
+          <div id="img-cambiar"></div>
+          <p id="texto-inferior-cambiar" class="texto-inf-cambiar" aria-label="edición de texto inferior">
+            Bottom text
+          </p>
         </div>
-        <button id="btn-descargar">⬇ Descargar meme</button>
+        <button id="btn-descargar" aria-label="botón para descargar meme">⬇ Descargar meme</button>
       </main>
       <!--ASIDE IMAGEN-->
-      <aside class="aside-imagen">
-        <span id="cerrar-img">&times</span>
+      <aside class="aside-imagen" aria-label="aside para editar imágen">
+        <span id="cerrar-img" aria-label="cerrar">&times</span>
         <h2>IMAGEN</h2>
         <form>
           <label for="url">Url</label>
@@ -42,7 +53,7 @@
         <div class="div-aside-imagen">
           <h4>Fondo</h4>
           <div class="div-de-fondo">
-            <input type="color" id="input-color-imagen" value="#FFFFFF"/>
+            <input type="color" id="input-color-imagen" value="#FFFFFF" />
             <select id="tipo-fondo">
               <option value="ninguno" id="ninguno">Ninguno</option>
               <option value="aclarar" id="aclarar" selected>Aclarar</option>
@@ -57,57 +68,130 @@
           <h4>Filtros</h4>
           <div class="div-filtros">
             <label for="brillo">Brillo</label>
-            <input class="range-img" type="range" id="brillo" value="1" min="0" max="1" step="0.1"/>
+            <input
+              class="range-img"
+              type="range"
+              id="brillo"
+              value="1"
+              min="0"
+              max="1"
+              step="0.1"
+            />
           </div>
           <div class="div-filtros">
             <label for="opacidad">Opacidad</label>
-            <input class="range-img" type="range" id="opacidad" value="100" min="0" max="100" step="10"/>
+            <input
+              class="range-img"
+              type="range"
+              id="opacidad"
+              value="100"
+              min="0"
+              max="100"
+              step="10"
+            />
           </div>
           <div class="div-filtros">
             <label for="contraste">Contraste</label>
-            <input class="range-img" type="range" id="contraste" value="1" min="0" max="1" step="0.1"/>
+            <input
+              class="range-img"
+              type="range"
+              id="contraste"
+              value="1"
+              min="0"
+              max="1"
+              step="0.1"
+            />
           </div>
           <div class="div-filtros">
             <label for="desenfoque">Desenfoque</label>
-            <input class="range-img" type="range" id="desenfoque" value="0" min="0" max="10" step="0.1" />
+            <input
+              class="range-img"
+              type="range"
+              id="desenfoque"
+              value="0"
+              min="0"
+              max="10"
+              step="0.1"
+            />
           </div>
           <div class="div-filtros">
             <label for="escala-de-brillo">Escala de grises</label>
-            <input class="range-img" type="range" id="escala-de-grises" value="0" min="0" max="100" step="1"/>
+            <input
+              class="range-img"
+              type="range"
+              id="escala-de-grises"
+              value="0"
+              min="0"
+              max="100"
+              step="1"
+            />
           </div>
           <div class="div-filtros">
             <label for="sepia">Sepia</label>
-            <input class="range-img" type="range" id="sepia" value="0" min="0" max="100" step="1"/>
+            <input
+              class="range-img"
+              type="range"
+              id="sepia"
+              value="0"
+              min="0"
+              max="100"
+              step="1"
+            />
           </div>
           <div class="div-filtros">
             <label for="hue">Hue</label>
-            <input class="range-img" type="range" id="hue" value="0" min="0" max="359" step="1" />
+            <input
+              class="range-img"
+              type="range"
+              id="hue"
+              value="0"
+              min="0"
+              max="359"
+              step="1"
+            />
           </div>
           <div class="div-filtros">
             <label for="saturado">Saturado</label>
-            <input class="range-img" type="range" id="saturado" value="0" min="100" max="1000" step="10"/>
+            <input
+              class="range-img"
+              type="range"
+              id="saturado"
+              value="0"
+              min="100"
+              max="1000"
+              step="10"
+            />
           </div>
           <div class="div-filtros">
             <label for="negativo">Negativo</label>
-            <input class="range-img "type="range" id="negativo" value="0" min="0" max="1" step="0.1" />
+            <input
+              class="range-img"
+              type="range"
+              id="negativo"
+              value="0"
+              min="0"
+              max="1"
+              step="0.1"
+            />
           </div>
-          <button type="reset" id="btn-restablecer">Restablecer</button>
+          <button type="reset" id="btn-restablecer" aria-label="botón para restablecer filtros">Restablecer</button>
         </div>
       </aside>
       <!--ASIDE TEXTO-->
-      <aside class="aside-texto">
-        <span id="cerrar-txt">&times</span>
+      <aside class="aside-texto" aria-label="aside para editar texto">
+        <span id="cerrar-txt" aria-label="cerrar">&times</span>
         <h2>TEXTO</h2>
         <form>
           <label for="texto-superior"> <b>SUPERIOR</b> </label>
           <input type="text" id="texto-superior" />
           <div class="checkbox">
-            <input type="checkbox" id="checkbox-sin-texto"/>Sin texto superior
+            <input type="checkbox" id="checkbox-sin-texto" />Sin texto superior
           </div>
           <label for="texto-inferior"> <b>INFERIOR</b> </label>
           <input type="text" id="texto-inferior" />
           <div class="checkbox">
-            <input type="checkbox" id="checkbox-sin-texto-in"/>Sin texto inferior
+            <input type="checkbox" id="checkbox-sin-texto-in" />Sin texto
+            inferior
           </div>
         </form>
         <div class="fuente">
@@ -121,11 +205,17 @@
             <option value="Georgia">Georgia</option>
           </select>
           <div class="alinear-texto">
-            <input type="number" id="tamaño-fuente" min="10" max="100" value="30"/>
+            <input
+              type="number"
+              id="tamaño-fuente"
+              min="10"
+              max="100"
+              value="30"
+            />
             <div class="div-alinear-texto">
-              <button class="btn-alinear"id="btn-izquierda">⬅</button>
-              <button class= "btn-alinear" id="btn-centro">↔</button>
-              <button class="btn-alinear"id="btn-derecha">➡</button>
+              <button class="btn-alinear" id="btn-izquierda">⬅</button>
+              <button class="btn-alinear" id="btn-centro">↔</button>
+              <button class="btn-alinear" id="btn-derecha">➡</button>
             </div>
           </div>
         </div>
@@ -153,7 +243,9 @@
             </div>
           </div>
         </div>
-        <div class="checkbox"><input type="checkbox" id="fondo-transparente"/>Fondo transparente</div>
+        <div class="checkbox">
+          <input type="checkbox" id="fondo-transparente" />Fondo transparente
+        </div>
         <div class="contorno">
           <h5>CONTORNO</h5>
           <div class="btn-contorno">
@@ -173,12 +265,12 @@
             <br />
             <select type="number" id="interlineado">
               <option value="0.8">0.8</option>
-            <option value="1">1</option>
-            <option value="1.2">1.2</option>
-            <option value="1.4">1.4</option>
-            <option value="1.6">1.6</option>
-            <option value="1.8">1.8</option>
-            <option value="2">2</option>
+              <option value="1">1</option>
+              <option value="1.2">1.2</option>
+              <option value="1.4">1.4</option>
+              <option value="1.6">1.6</option>
+              <option value="1.8">1.8</option>
+              <option value="2">2</option>
             </select>
           </div>
         </div>

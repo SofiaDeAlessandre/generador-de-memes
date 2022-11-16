@@ -47,27 +47,6 @@ let cerrarTxt = $("#cerrar-txt");
 
 //-------funciones-------:
 
-//modos
-btn.addEventListener("click", () => {
-  body.classList.toggle("modo-claro");
-  body.classList.toggle("modo-oscuro");
-  let enModoOscuro = body.classList.contains("modo-oscuro");
-  if (enModoOscuro) {
-    btn.innerText = "🌙 Modo oscuro";
-  } else {
-    btn.innerText = " 💡 Modo claro";
-  }
-});
-//ocultar aside
-btnImagen.addEventListener("click", () => {
-  asideImagen.classList.remove("oculto");
-  asideTexto.classList.add("oculto");
-});
-
-btnTexto.addEventListener("click", () => {
-  asideImagen.classList.add("oculto");
-  asideTexto.classList.remove("oculto");
-});
 //descargar
 const descargarMeme = () => {
   domtoimage.toBlob(contImagen).then(function (blob) {
@@ -93,7 +72,26 @@ const aplicarFiltros = () => {
 };
 
 //-------eventos-------:
-
+//modos
+btn.addEventListener("click", () => {
+  body.classList.toggle("modo-claro");
+  body.classList.toggle("modo-oscuro");
+  let enModoOscuro = body.classList.contains("modo-oscuro");
+  if (enModoOscuro) {
+    btn.innerText = "🌙 Modo oscuro";
+  } else {
+    btn.innerText = " 💡 Modo claro";
+  }
+});
+//ocultar aside
+btnImagen.addEventListener("click", () => {
+  asideImagen.classList.remove("oculto");
+  asideTexto.classList.add("oculto");
+});
+btnTexto.addEventListener("click", () => {
+  asideImagen.classList.add("oculto");
+  asideTexto.classList.remove("oculto");
+});
 //cambiar textos
 textoSuperior.addEventListener("input", (event) => {
   textoCambiar.innerText = event.target.value;
@@ -113,7 +111,6 @@ inputColorImagen.addEventListener("blur", (event) => {
 btnDescargar.addEventListener("click", descargarMeme);
 //restablecer
 btnRestablecer.addEventListener("click", restablecerFiltros);
-
 //filtros
 inputBrillo.addEventListener("change", aplicarFiltros);
 inputOpacidad.addEventListener("change", aplicarFiltros);
@@ -128,14 +125,8 @@ inputNegativo.addEventListener("change", aplicarFiltros);
 inputColorImagen.addEventListener("input", (event) => {
   imagenCambiar.style.color = event.target.value;
 });
-//tipo de fondo
+//fondo
 tipoFondo.addEventListener("input", (event) => {
-  let ninguno = $("#ninguno");
-  let aclarar = $("#aclarar");
-  let oscurecer = $("#oscurecer");
-  let diferencia = $("#diferencia");
-  let luminosidad = $("#luminosidad");
-  let multiplicar = $("#multiplicar");
   if (event.target.value === "aclarar") {
     imagenCambiar.style.backgroundBlendMode = "lighten";
   } else if (event.target.value === "oscurecer") {
@@ -151,16 +142,15 @@ tipoFondo.addEventListener("input", (event) => {
   }
 });
 //aside TEXTO
-
-sinTextoSup.addEventListener("input", (event) => {
+sinTextoSup.addEventListener("input", () => {
   textoCambiar.classList.toggle("texto-oculto");
 });
-sinTextoIn.addEventListener("input", (event) => {
+sinTextoIn.addEventListener("input", () => {
   textoInferiorCambiar.classList.toggle("texto-oculto");
 });
-// fuentes
+//fuentes
 seleccionFuentes.addEventListener("input", (event) => {
-  if (event.target.value === "arial") {
+  if (event.target.value === "Arial") {
     textoCambiar.style.fontFamily = "Arial";
   } else if (event.target.value === "Arial Black") {
     textoCambiar.style.fontFamily = "Arial Black";
@@ -168,12 +158,14 @@ seleccionFuentes.addEventListener("input", (event) => {
     textoCambiar.style.fontFamily = "Verdana";
   } else if (event.target.value === "Tahoma") {
     textoCambiar.style.fontFamily = "Tahoma";
-  }else if (event.target.value === "Lucida Sans") {
+  } else if (event.target.value === "Lucida Sans") {
     textoCambiar.style.fontFamily = "Lucida Sans";
-  }else if (event.target.value === "Georgia") {
+  } else if (event.target.value === "Georgia") {
     textoCambiar.style.fontFamily = "Georgia";
   }
-  if (event.target.value === "arial") {
+});
+seleccionFuentes.addEventListener("input", (event) => {
+  if (event.target.value === "Arial") {
     textoInferiorCambiar.style.fontFamily = "Arial";
   } else if (event.target.value === "Arial Black") {
     textoInferiorCambiar.style.fontFamily = "Arial Black";
@@ -181,9 +173,9 @@ seleccionFuentes.addEventListener("input", (event) => {
     textoInferiorCambiar.style.fontFamily = "Verdana";
   } else if (event.target.value === "Tahoma") {
     textoInferiorCambiar.style.fontFamily = "Tahoma";
-  }else if (event.target.value === "Lucida Sans") {
+  } else if (event.target.value === "Lucida Sans") {
     textoInferiorCambiar.style.fontFamily = "Lucida Sans";
-  }else if (event.target.value === "Georgia") {
+  } else if (event.target.value === "Georgia") {
     textoInferiorCambiar.style.fontFamily = "Georgia";
   }
 });
@@ -192,15 +184,14 @@ tamañoFuente.addEventListener("input", (event) => {
   textoCambiar.style.fontSize = `${event.target.value}px`;
   textoInferiorCambiar.style.fontSize = `${event.target.value}px`;
 });
-
 //alineación
-btnIzquierda.addEventListener("click", (event) => {
+btnIzquierda.addEventListener("click", () => {
   contImagen.style.alignItems = "flex-start";
 });
-btnCentro.addEventListener("click", (event) => {
+btnCentro.addEventListener("click", () => {
   contImagen.style.alignItems = "center";
 });
-btnDerecha.addEventListener("click", (event) => {
+btnDerecha.addEventListener("click", () => {
   contImagen.style.alignItems = "flex-end";
 });
 //color TXT
@@ -212,11 +203,10 @@ inputFondoTexto.addEventListener("input", (event) => {
   contImagen.style.backgroundColor = event.target.value;
 });
 //fondo transparente
-inputFondoTransparente.addEventListener("input", (event) => {
+inputFondoTransparente.addEventListener("input", () => {
   contImagen.classList.toggle("fondo-transparente");
 });
 //contorno
-
 btnClaro.addEventListener("click", () => {
   textoCambiar.classList.add("contorno-claro-efecto");
   textoInferiorCambiar.classList.add("contorno-claro-efecto");
@@ -234,14 +224,14 @@ btnNinguno.addEventListener("click", () => {
   textoInferiorCambiar.classList.remove("contorno-claro-efecto");
 });
 //espaciado
-inputEspaciado.addEventListener("input", (evento) => {
-  textoCambiar.style.padding = `${evento.target.value}px`;
-  textoInferiorCambiar.style.padding = `${evento.target.value}px`;
+inputEspaciado.addEventListener("input", (event) => {
+  textoCambiar.style.padding = `${event.target.value}px`;
+  textoInferiorCambiar.style.padding = `${event.target.value}px`;
 });
 //interlineado
-inputInterlineado.addEventListener("input", (evento) => {
-  textoCambiar.style.lineHeight = evento.target.value;
-  textoInferiorCambiar.style.lineHeight = evento.target.value;
+inputInterlineado.addEventListener("input", (event) => {
+  textoCambiar.style.lineHeight = event.target.value;
+  textoInferiorCambiar.style.lineHeight = event.target.value;
 });
 //cerrar aside
 cerrarImg.addEventListener("click", () => {

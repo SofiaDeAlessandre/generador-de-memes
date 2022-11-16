@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 header {
   background-color: black;
@@ -10,13 +10,13 @@ header {
   margin-bottom: 50px;
 }
 :root {
-  --modoClaroSection:rgb(231, 214, 226);
+  --modoClaroSection: rgb(231, 214, 226);
   --modoClaroHeaderBtn: rgb(169, 151, 163);
   --modoClaroAside: rgb(208, 193, 203);
   --modoOscuroSection: rgb(69, 69, 92);
-  --modoOscuroHeaderBtn:rgb(29, 29, 49) ;
+  --modoOscuroHeaderBtn: rgb(29, 29, 49);
   --modoOscuroAside: rgb(40, 40, 70);
-  --inputColores:rgb(187, 187, 191);
+  --inputColores: rgb(174, 174, 176);
 }
 nav {
   text-align: center;
@@ -45,24 +45,22 @@ main {
   background-color: white;
   width: 600px;
   height: 600px;
- /*margin-top: 50px;*/
-  text-align:left;
+  text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 #img-cambiar {
   width: 100%;
   height: 100%;
   background-color: black;
-  background-size:cover;
+  background-size: cover;
 }
-.texto-sup-cambiar{
+.texto-sup-cambiar {
   text-shadow: none;
 }
-.texto-inf-cambiar{
+.texto-inf-cambiar {
   text-shadow: none;
 }
 div p {
@@ -71,18 +69,18 @@ div p {
   word-break: break-all;
 }
 
-/*aside texto*/
+/*ASIDE TEXTO*/
 .aside-texto {
   width: 320px;
   height: 100%;
   text-align: center;
-  position:fixed;
+  position: fixed;
   top: 0;
   right: 0;
   padding-top: 60px;
   padding-left: 20px;
 }
-span{
+span {
   border-radius: 5px;
   cursor: pointer;
   position: absolute;
@@ -90,7 +88,6 @@ span{
   right: 5px;
   font-size: 20px;
   display: none;
-  
 }
 .checkbox {
   display: flex;
@@ -101,10 +98,10 @@ span{
   width: 15px;
   height: 15px;
 }
-.texto-oculto{
+.texto-oculto {
   display: none;
 }
-.fondo-transparente{
+.fondo-transparente {
   background-color: transparent;
 }
 .fuente {
@@ -154,18 +151,17 @@ span{
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.contorno-btn{
+.contorno-btn {
   width: 50px;
 }
-.contorno-claro-efecto{
- text-shadow: white 2px 2px,white -2px 2px, white 2px -2px, white -2px -2px;
+.contorno-claro-efecto {
+  text-shadow: white 2px 2px, white -2px 2px, white 2px -2px, white -2px -2px;
 }
-.contorno-oscuro-efecto{
-  text-shadow: black 2px 2px,black -2px 2px,black 2px -2px,black -2px -2px;
+.contorno-oscuro-efecto {
+  text-shadow: black 2px 2px, black -2px 2px, black 2px -2px, black -2px -2px;
 }
-
-.txt-izquierda{
- text-align: left;
+.txt-izquierda {
+  text-align: left;
 }
 .btn-contorno {
   display: flex;
@@ -176,7 +172,7 @@ span{
   height: 30px;
   border-radius: 5px;
 }
-.btn-alinear{
+.btn-alinear {
   border-radius: 3px;
 }
 .espaciado-interlineado {
@@ -208,7 +204,7 @@ span{
   padding-top: 10px;
   text-align: left;
 }
-#input-color-imagen{
+#input-color-imagen {
   width: 100px;
 }
 .div-de-fondo {
@@ -234,11 +230,11 @@ span{
 .oculto {
   display: none;
 }
-#btn-restablecer{
+#btn-restablecer {
   padding: 5px;
   border-radius: 2px;
 }
-.range-img{
+.range-img {
   width: 90%;
 }
 #btn-descargar {
@@ -246,9 +242,9 @@ span{
   padding: 10px;
   cursor: pointer;
 }
-/*Modo claro y oscuro*/
+/*Modos*/
 .modo-claro {
-  background-color:var(--modoClaroSection);
+  background-color: var(--modoClaroSection);
   color: black;
 }
 .modo-claro header {
@@ -258,16 +254,16 @@ span{
   color: black;
 }
 .modo-claro button {
-  background-color:var(--modoClaroHeaderBtn);
+  background-color: var(--modoClaroHeaderBtn);
 }
 .modo-claro aside {
-  background-color:var(--modoClaroAside);
+  background-color: var(--modoClaroAside);
 }
-.texto-cambiar{
+.texto-cambiar {
   text-shadow: none;
 }
 .modo-oscuro {
-  background-color: var(--modoOscuroSection) ;
+  background-color: var(--modoOscuroSection);
 }
 .modo-oscuro header {
   background-color: var(--modoOscuroHeaderBtn);
@@ -293,30 +289,32 @@ label {
 input {
   width: 90%;
   height: 30px;
-  border-radius:5px;
-  border-width: 0px;
-  background-color:var(--inputColores);
-}
-select{
   border-radius: 5px;
   border-width: 0px;
-  background-color:var(--inputColores);
+  background-color: var(--inputColores);
+}
+select {
+  border-radius: 5px;
+  border-width: 0px;
+  background-color: var(--inputColores);
 }
 .checkbox {
   display: flex;
   justify-content: space-around;
 }
 
-@media screen and (max-width: 880px){
+/*Responsive Design*/
+@media screen and (max-width: 880px) {
   .aside-imagen {
-   width: 90%;
-   height: 100%;
-   padding: 0%;
+    width: 90%;
+    height: 100%;
+    padding: 0px;
+    padding-left: 6px;
   }
-  .range-img{
+  .range-img {
     width: 60%;
   }
-  span{
+  span {
     display: flex;
     position: relative;
   }
@@ -325,21 +323,22 @@ select{
     height: 100%;
     padding-top: 0px;
   }
-  header{
-   width: 880px;
+  header {
+    width: 880px;
   }
   .descargar-img {
     width: 450px;
     height: 500px;
   }
 }
-@media screen and (max-width: 440px){
+@media screen and (max-width: 480px) {
   .aside-imagen {
-   width: 100%;
-   height: 100%;
-   padding-top: 0px;
+    width: 100%;
+    height: 100%;
+    padding-top: 0px;
+    padding-left: 5px;
   }
-  span{
+  span {
     display: flex;
     position: relative;
   }
@@ -348,8 +347,8 @@ select{
     height: 100%;
     padding-top: 0px;
   }
-  header{
-   width: 440px;
+  header {
+    width: 480px;
   }
   .descargar-img {
     width: 380px;

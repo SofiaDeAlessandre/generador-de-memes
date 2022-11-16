@@ -348,7 +348,7 @@ select {
     padding-top: 0px;
   }
   header {
-    width: 480px;
+    width: 100%;
   }
   .descargar-img {
     width: 380px;

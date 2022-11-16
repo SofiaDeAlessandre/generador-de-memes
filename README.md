@@ -1,4 +1,4 @@
-# 😄EDITOR DE MEMES POR SOFIA
+# 😄 Editor de memes 
 
 ### Introducción
 ¡Hola! Este proyecto fue realizado con los conocimientos adquiridos en el módulo "JavaScript", de la carrera de Programación Fronted de ADA ITW. Mediante el mismo se logran editar y descargar imágenes modificando texto y filtros. También se puede alternar entre modo claro y oscuro.

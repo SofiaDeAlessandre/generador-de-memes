@@ -5,7 +5,7 @@ let body = document.body;
 let btn = $("#btn");
 let textoSuperior = $("#texto-superior");
 let textoCambiar = $("#texto-cambiar");
-let TextoInferior = $("#texto-inferior");
+let textoInferior = $("#texto-inferior");
 let textoInferiorCambiar = $("#texto-inferior-cambiar");
 let btnImagen = $("#btn-imagen");
 let urlInput = $("#url-img");
@@ -44,6 +44,7 @@ let btnNinguno = $("#contorno-ninguno");
 let btnOscuro = $("#contorno-oscuro");
 let cerrarImg = $("#cerrar-img");
 let cerrarTxt = $("#cerrar-txt");
+let colorFondoImg = $("#h6") 
 
 //-------funciones-------:
 
@@ -93,19 +94,20 @@ btnTexto.addEventListener("click", () => {
   asideTexto.classList.remove("oculto");
 });
 //cambiar textos
-textoSuperior.addEventListener("input", (event) => {
-  textoCambiar.innerText = event.target.value;
+textoSuperior.addEventListener("input", () => {
+  textoCambiar.innerText = textoSuperior.value;
 });
-TextoInferior.addEventListener("input", (event) => {
-  textoInferiorCambiar.innerText = event.target.value;
+textoInferior.addEventListener("input", () => {
+  textoInferiorCambiar.innerText = textoInferior.value;
 });
 //vincular url
 urlInput.addEventListener("input", (event) => {
   imagenCambiar.style.backgroundImage = `url("${event.target.value}")`;
 });
 //cambiar color
-inputColorImagen.addEventListener("blur", (event) => {
-  imagenCambiar.style.backgroundColor = event.target.value;
+inputColorImagen.addEventListener("input", () => {
+  imagenCambiar.style.backgroundColor = inputColorImagen.value;
+  colorFondoImg.innerText = inputColorImagen.value;
 });
 //descargar
 btnDescargar.addEventListener("click", descargarMeme);
@@ -126,21 +128,12 @@ inputColorImagen.addEventListener("input", (event) => {
   imagenCambiar.style.color = event.target.value;
 });
 //fondo
-tipoFondo.addEventListener("input", (event) => {
-  if (event.target.value === "aclarar") {
-    imagenCambiar.style.backgroundBlendMode = "lighten";
-  } else if (event.target.value === "oscurecer") {
-    imagenCambiar.style.backgroundBlendMode = "darken";
-  } else if (event.target.value === "diferencia") {
-    imagenCambiar.style.backgroundBlendMode = "difference";
-  } else if (event.target.value === "luminosidad") {
-    imagenCambiar.style.backgroundBlendMode = "luminosity";
-  } else if (event.target.value === "multiplicar") {
-    imagenCambiar.style.backgroundBlendMode = "multiply";
-  } else {
-    imagenCambiar.style.backgroundBlendMode = "normal";
-  }
-});
+tipoFondo.addEventListener("input", () => {
+  if (tipoFondo.value === "unset") {
+imagenCambiar.style.backgroundBlendMode ="normal"
+  }else
+  imagenCambiar.style.backgroundBlendMode = tipoFondo.value
+  })
 //aside TEXTO
 sinTextoSup.addEventListener("input", () => {
   textoCambiar.classList.toggle("texto-oculto");
@@ -149,40 +142,14 @@ sinTextoIn.addEventListener("input", () => {
   textoInferiorCambiar.classList.toggle("texto-oculto");
 });
 //fuentes
-seleccionFuentes.addEventListener("input", (event) => {
-  if (event.target.value === "Arial") {
-    textoCambiar.style.fontFamily = "Arial";
-  } else if (event.target.value === "Arial Black") {
-    textoCambiar.style.fontFamily = "Arial Black";
-  } else if (event.target.value === "Verdana") {
-    textoCambiar.style.fontFamily = "Verdana";
-  } else if (event.target.value === "Tahoma") {
-    textoCambiar.style.fontFamily = "Tahoma";
-  } else if (event.target.value === "Lucida Sans") {
-    textoCambiar.style.fontFamily = "Lucida Sans";
-  } else if (event.target.value === "Georgia") {
-    textoCambiar.style.fontFamily = "Georgia";
-  }
-});
-seleccionFuentes.addEventListener("input", (event) => {
-  if (event.target.value === "Arial") {
-    textoInferiorCambiar.style.fontFamily = "Arial";
-  } else if (event.target.value === "Arial Black") {
-    textoInferiorCambiar.style.fontFamily = "Arial Black";
-  } else if (event.target.value === "Verdana") {
-    textoInferiorCambiar.style.fontFamily = "Verdana";
-  } else if (event.target.value === "Tahoma") {
-    textoInferiorCambiar.style.fontFamily = "Tahoma";
-  } else if (event.target.value === "Lucida Sans") {
-    textoInferiorCambiar.style.fontFamily = "Lucida Sans";
-  } else if (event.target.value === "Georgia") {
-    textoInferiorCambiar.style.fontFamily = "Georgia";
-  }
+seleccionFuentes.addEventListener("input", () => {
+  textoCambiar.style.fontFamily = seleccionFuentes.value;
+  textoInferiorCambiar.style.fontFamily = seleccionFuentes.value
 });
 //tamaño fuente
-tamañoFuente.addEventListener("input", (event) => {
-  textoCambiar.style.fontSize = `${event.target.value}px`;
-  textoInferiorCambiar.style.fontSize = `${event.target.value}px`;
+tamañoFuente.addEventListener("input", () => {
+  textoCambiar.style.fontSize = `${tamañoFuente.value}px`;
+  textoInferiorCambiar.style.fontSize = `${tamañoFuente.value}px`;
 });
 //alineación
 btnIzquierda.addEventListener("click", () => {
@@ -204,7 +171,13 @@ inputFondoTexto.addEventListener("input", (event) => {
 });
 //fondo transparente
 inputFondoTransparente.addEventListener("input", () => {
-  contImagen.classList.toggle("fondo-transparente");
+  const inputChecked = inputFondoTransparente.checked;
+  if (inputChecked) {
+    contImagen.style.backgroundColor = "transparent";
+  } 
+  else {
+    contImagen.style.backgroundColor = inputFondoTexto.value;
+  }
 });
 //contorno
 btnClaro.addEventListener("click", () => {

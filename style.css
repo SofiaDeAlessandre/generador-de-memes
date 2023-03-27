@@ -204,8 +204,20 @@ span {
   padding-top: 10px;
   text-align: left;
 }
-#input-color-imagen {
+.div-input-fondo{
+  background-color: var(--inputColores);
   width: 100px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+h6{
+  background-color: var(--inputColores);
+  width: 50px;
+  color: black;
+}
+#input-color-imagen {
+  width: 50px;
 }
 .div-de-fondo {
   display: flex;
@@ -218,7 +230,7 @@ span {
 }
 #tipo-fondo {
   width: 100px;
-  height: 30;
+  height: 30px;
 }
 .filtros h4 {
   text-align: left;

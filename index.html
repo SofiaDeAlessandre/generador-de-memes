@@ -75,14 +75,17 @@
         <div class="div-aside-imagen">
           <h4>Fondo</h4>
           <div class="div-de-fondo">
+            <div class="div-input-fondo">
             <input type="color" id="input-color-imagen" value="#FFFFFF" />
+            <h6 id="h6">#FFFFFF</h6>
+          </div>
             <select id="tipo-fondo">
-              <option value="ninguno" id="ninguno">Ninguno</option>
-              <option value="aclarar" id="aclarar" selected>Aclarar</option>
-              <option value="oscurecer" id="oscurecer">Oscurecer</option>
-              <option value="diferencia" id="diferencia">Diferencia</option>
-              <option value="luminosidad" id="luminosidad">luminosidad</option>
-              <option value="multiplicar" id="multiplicar">Multiplicar</option>
+              <option value="unset" id="ninguno" selected>Ninguno</option>
+              <option value="lighten" id="aclarar">Aclarar</option>
+              <option value="darken" id="oscurecer">Oscurecer</option>
+              <option value="difference" id="diferencia">Diferencia</option>
+              <option value="luminosity" id="luminosidad">luminosidad</option>
+              <option value="multiply" id="multiplicar">Multiplicar</option>
             </select>
           </div>
         </div>
